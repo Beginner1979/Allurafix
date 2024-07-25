@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
 
-const Modal = ({ video, onClose, onSave }) => {
-  const [title, setTitle] = useState(video?.title || '');
-  const [category, setCategory] = useState(video?.category || '');
-  const [image, setImage] = useState(video?.image || '');
-  const [videoUrl, setVideoUrl] = useState(video?.videoUrl || '');
-  const [description, setDescription] = useState(video?.description || '');
+const Modal = ({ onClose, onSave }) => {
+  const [title, setTitle] = useState('');
+  const [category, setCategory] = useState('');
+  const [image, setImage] = useState('');
+  const [videoUrl, setVideoUrl] = useState('');
+  const [description, setDescription] = useState('');
 
   const handleSave = () => {
-    const updatedVideo = { title, category, image, videoUrl, description };
-    onSave(updatedVideo);
+    const video = { title, category, image, videoUrl, description };
+    onSave(video);
   };
 
   return (
     <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0,0,0,0.5)', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
       <div style={{ backgroundColor: '#fff', padding: '20px', width: '300px', borderRadius: '8px' }}>
-        <h2>Editar Card</h2>
+        <h2>Nuevo Video</h2>
         <label>Título</label>
         <input value={title} onChange={(e) => setTitle(e.target.value)} />
         <label>Categoría</label>

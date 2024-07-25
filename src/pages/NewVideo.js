@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 import Modal from '../components/Modal';
 
 const NewVideo = () => {
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(true);
 
   const handleSave = (video) => {
     fetch('http://localhost:3000/videos', {
